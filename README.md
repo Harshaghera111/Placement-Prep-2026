@@ -8,20 +8,56 @@
   <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" />
   <img src="https://img.shields.io/badge/Focus-Internships%20%26%20Placements-blue?style=flat-square" />
   <img src="https://img.shields.io/badge/Year-2026-orange?style=flat-square" />
-  <img src="https://img.shields.io/badge/DSA-In%20Progress-yellow?style=flat-square" />
+  <img src="https://img.shields.io/badge/DSA-Daily__DSA%20Repo-yellow?style=flat-square" />
 </p>
 
 ---
 
-## 📍 Navigation
+## 🗂️ Repository Architecture
+
+This repository is a structured **Placement Preparation Hub** covering all areas required for Software Engineering internships and placements — except DSA, which is maintained in a dedicated repository for daily practice.
+
+| # | Module | Contents |
+|---|---|---|
+| 01 | 🗺️ [Roadmap](./01-Roadmap/) | Learning plan, progress tracker, active queue |
+| 02 | 📚 [Core CS Subjects](./02-Core-Subjects/) | DBMS, OOP, OS, Computer Networks |
+| 03 | 🔧 [Projects](./03-Projects/) | GarageSathi, GramSathi, TyreWebsite deep dives |
+| 04 | 🤖 [AI Engineering](./04-AI-Engineering/) | LLMs, RAG, Embeddings, Agents, Vector DBs |
+| 05 | 🎤 [Interview Prep](./05-Interview-Prep/) | HR questions, technical Q&A, resume notes |
+| 06 | 🏗️ [System Design](./06-System-Design/) | Concepts, case studies, design patterns |
+
+> **DSA practice is maintained separately in:**
+> 🔗 **[Daily_DSA Repository](https://github.com/Harshaghera111/Daily_DSA)** — Striver A2Z Sheet · LeetCode · Problem patterns
+
+---
+
+## 🧭 Repository Navigation
+
+```
+Roadmap → Core Subjects → Projects → AI Engineering → Interview Prep → System Design
+   01          02             03            04               05               06
+```
+
+| ← Prev | Module | Next → |
+|---|---|---|
+| — | 🗺️ [01 · Roadmap](./01-Roadmap/) | 📚 [02 · Core Subjects](./02-Core-Subjects/) |
+| 🗺️ [01 · Roadmap](./01-Roadmap/) | 📚 [02 · Core Subjects](./02-Core-Subjects/) | 🔧 [03 · Projects](./03-Projects/) |
+| 📚 [02 · Core Subjects](./02-Core-Subjects/) | 🔧 [03 · Projects](./03-Projects/) | 🤖 [04 · AI Engineering](./04-AI-Engineering/) |
+| 🔧 [03 · Projects](./03-Projects/) | 🤖 [04 · AI Engineering](./04-AI-Engineering/) | 🎤 [05 · Interview Prep](./05-Interview-Prep/) |
+| 🤖 [04 · AI Engineering](./04-AI-Engineering/) | 🎤 [05 · Interview Prep](./05-Interview-Prep/) | 🏗️ [06 · System Design](./06-System-Design/) |
+| 🎤 [05 · Interview Prep](./05-Interview-Prep/) | 🏗️ [06 · System Design](./06-System-Design/) | — |
+
+---
+
+## 📍 In-Page Navigation
 
 | Section | Link |
 |---|---|
-| 🗺️ Main Roadmap | [Flowchart](#-main-roadmap-flowchart) |
+| 🗺️ Main Roadmap | [Flowchart](#️-main-roadmap-flowchart) |
 | 🧠 Mind Map | [Mind Map View](#-mind-map-roadmap) |
 | 📅 Weekly Workflow | [Daily Routine](#-weekly-workflow) |
 | 📊 Progress Tracker | [Progress](#-progress-tracker) |
-| 🗂️ Repository Structure | [Structure](#-repository-structure) |
+| 🗂️ Repository Structure | [Structure](#️-repository-structure) |
 
 ---
 
@@ -42,7 +78,7 @@ flowchart TD
     INTERVIEW --> READY
 
     %% ─── DSA ──────────────────────────────────────
-    DSA["🔥 DSA\n**Highest Priority**"]:::high
+    DSA["🔥 DSA\n**Highest Priority**\n📦 Daily_DSA Repository"]:::high
 
     DSA --> DSA1["📋 Striver A2Z Sheet"]:::node
     DSA --> DSA2["📐 Arrays"]:::node
@@ -55,7 +91,7 @@ flowchart TD
     DSA --> DSA9["🎤 Interview Questions"]:::node
 
     %% ─── CORE CS ───────────────────────────────────
-    CORE["🔥 Core CS Subjects\n**High Priority**"]:::high
+    CORE["🔥 02 · Core CS Subjects\n**High Priority**"]:::high
 
     CORE --> C1["🗄️ DBMS"]:::node
     CORE --> C2["💻 Operating System"]:::node
@@ -73,7 +109,7 @@ flowchart TD
     DEV --> D5["🚀 Deployment"]:::node
 
     %% ─── PROJECTS ────────────────────────────────────
-    PROJ["⚡ Projects\n**Medium Priority**"]:::medium
+    PROJ["⚡ 03 · Projects\n**Medium Priority**"]:::medium
 
     PROJ --> P1["🔧 GarageSathi"]:::node
     PROJ --> P2["🌾 GramSathi"]:::node
@@ -87,7 +123,7 @@ flowchart TD
     APT --> A3["📝 Verbal Ability"]:::node
 
     %% ─── INTERVIEW PREP ──────────────────────────────
-    INTERVIEW["🎯 Interview Preparation\n**Placement Phase**"]:::placement
+    INTERVIEW["🎯 05 · Interview Preparation\n**Placement Phase**"]:::placement
 
     INTERVIEW --> I1["🤝 HR Questions"]:::node
     INTERVIEW --> I2["💻 Technical Questions"]:::node
@@ -121,7 +157,7 @@ flowchart TD
 ```mermaid
 mindmap
   root(("🎯 Placement\nPrep 2026"))
-    🔥 DSA
+    🔥 DSA — Daily_DSA Repo
       📋 Striver A2Z Sheet
       📐 Arrays
       🔤 Strings
@@ -131,7 +167,7 @@ mindmap
       🕸️ Graphs
       💡 Dynamic Programming
       🎤 Interview Questions
-    🔥 Core CS
+    🔥 02 · Core CS
       🗄️ DBMS
       💻 Operating System
       🌐 Computer Networks
@@ -143,7 +179,7 @@ mindmap
       🔌 REST APIs
       🐙 Git & GitHub
       🚀 Deployment
-    ⚡ Projects
+    ⚡ 03 · Projects
       🔧 GarageSathi
       🌾 GramSathi
       🆕 Future Projects
@@ -151,7 +187,7 @@ mindmap
       🔢 Quantitative Aptitude
       🧠 Logical Reasoning
       📝 Verbal Ability
-    🎯 Interview Prep
+    🎯 05 · Interview Prep
       🤝 HR Questions
       💻 Technical Questions
       📄 Resume
@@ -170,7 +206,7 @@ mindmap
 
 | Label | Meaning | Topics |
 |---|---|---|
-| 🔥 **High Priority** | Foundation — do this first, daily | DSA, Core CS Subjects |
+| 🔥 **High Priority** | Foundation — do this first, daily | DSA (Daily_DSA), Core CS Subjects |
 | ⚡ **Medium Priority** | Build alongside DSA | Development, Projects, Aptitude |
 | 🎯 **Placement Phase** | Activate once foundation is solid | Interview Prep, Applications |
 
@@ -182,10 +218,10 @@ mindmap
 
 ```mermaid
 flowchart LR
-    W1["🔥 DSA\n1–2 problems/day"]:::step
+    W1["🔥 DSA\n1–2 problems/day\nDaily_DSA Repo"]:::step
     W2["📚 Core Subjects\n1 topic/day"]:::step
-    W3["⚛️ Development\n30 min/day"]:::step
-    W4["🔧 Projects\n Build & document"]:::step
+    W3["🔧 Projects\nBuild & document"]:::step
+    W4["🤖 AI Engineering\n30 min/day"]:::step
     W5["🔁 Revision\nWeekly recap"]:::step
 
     W1 --> W2 --> W3 --> W4 --> W5 --> W1
@@ -197,7 +233,7 @@ flowchart LR
 
 | Time Block | Activity | Duration |
 |---|---|---|
-| 🌅 Morning | DSA Problem Solving | 90 min |
+| 🌅 Morning | DSA Problem Solving (Daily_DSA) | 90 min |
 | ☀️ Mid-day | Core CS Subject Study | 60 min |
 | 🌇 Evening | Development / Project Work | 60 min |
 | 🌙 Night | Revision + Notes Update | 30 min |
@@ -208,7 +244,7 @@ flowchart LR
 
 > Update this section regularly as you complete each area.
 
-### 🔥 DSA Progress
+### 🔥 DSA Progress *(tracked in [Daily_DSA](https://github.com/Harshaghera111/Daily_DSA))*
 
 | Topic | Status | Notes |
 |---|---|---|
@@ -222,7 +258,7 @@ flowchart LR
 | Dynamic Programming | 🔴 Not Started | |
 | Interview Questions | 🔴 Not Started | |
 
-### 📚 Core Subjects Progress
+### 📚 Core Subjects Progress — [02-Core-Subjects](./02-Core-Subjects/)
 
 | Subject | Status | Notes |
 |---|---|---|
@@ -232,7 +268,7 @@ flowchart LR
 | OOPs | 🟡 In Progress | |
 | SQL | 🔴 Not Started | |
 
-### 🔧 Project Progress
+### 🔧 Project Progress — [03-Projects](./03-Projects/)
 
 | Project | Status | Notes |
 |---|---|---|
@@ -240,7 +276,7 @@ flowchart LR
 | GramSathi | 🟢 Built | |
 | Future Projects | 🔴 Planning | |
 
-### 🎯 Interview Readiness
+### 🎯 Interview Readiness — [05-Interview-Prep](./05-Interview-Prep/)
 
 | Area | Status | Notes |
 |---|---|---|
@@ -260,14 +296,15 @@ flowchart LR
 ```
 Placement-Prep-2026/
 │
-├── 01-Roadmap/          ← 🗺️  Learning plan and active queue
-├── 02-DSA/              ← 📐  Topic-wise notes and patterns
-├── 03-Core-Subjects/    ← 📚  DBMS, OOP, OS, CN
-├── 04-Projects/         ← 🔧  Project explanations and decisions
-├── 05-AI-Engineering/   ← 🤖  LLMs, RAG, agents, vector DBs
-├── 06-Interview-Prep/   ← 🎤  HR answers, technical Q&A
-└── 07-System-Design/    ← 🏗️  Concepts and case studies
+├── 01-Roadmap/            ← 🗺️  Learning plan, active queue, progress tracker
+├── 02-Core-Subjects/      ← 📚  DBMS, OOP, OS, Computer Networks, SQL
+├── 03-Projects/           ← 🔧  GarageSathi, GramSathi, TyreWebsite
+├── 04-AI-Engineering/     ← 🤖  LLMs, RAG, Embeddings, Agents, Vector DBs
+├── 05-Interview-Prep/     ← 🎤  HR answers, technical Q&A, resume notes
+└── 06-System-Design/      ← 🏗️  Concepts and case studies
 ```
+
+> 📦 **DSA** → maintained in [Daily_DSA](https://github.com/Harshaghera111/Daily_DSA) (separate repository)
 
 ---
 
