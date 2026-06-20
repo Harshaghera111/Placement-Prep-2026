@@ -1,144 +1,98 @@
-<h1 align="center">🎯 Placement Preparation Journey — 2026</h1>
+# Placement-Prep-2026
 
-<p align="center">
-  <em>A personal Software Engineering Placement Operating System — built and maintained throughout 2026.</em>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" />
-  <img src="https://img.shields.io/badge/Focus-Internships%20%26%20Placements-blue?style=flat-square" />
-  <img src="https://img.shields.io/badge/Phase-1%20%E2%80%94%20Foundations-orange?style=flat-square" />
-  <img src="https://img.shields.io/badge/DSA-Daily__DSA%20Repo-red?style=flat-square" />
-  <img src="https://img.shields.io/badge/Year-2026-purple?style=flat-square" />
-</p>
+Central repository for placement preparation — notes, project documentation, AI learning, and interview preparation.
 
 ---
 
-## 🚀 The Journey
+## Related Repository
 
-```
-📦 Daily_DSA
-      ↓
-📚 Core Subjects
-      ↓
-🔧 Projects
-      ↓
-📄 Resume
-      ↓
-🎤 Interview Prep
-      ↓
-🏢 Internship
-      ↓
-🎓 Placement
-      ↓
-✅ Software Engineer Career
-```
+**[Daily_DSA](https://github.com/Harshaghera111/Daily_DSA)**
+
+- Striver A2Z DSA Sheet
+- Coding Practice
+- DSA Notes
+- LeetCode / GFG Solutions
 
 ---
 
-## ⚡ START HERE — Today's Actions
+## Current Focus
 
-> Open this every session. Do these before anything else.
-
-| # | Action | Where |
-|---|---|---|
-| ☐ 1 | Solve 2 DSA problems | [Daily_DSA ↗](https://github.com/Harshaghera111/Daily_DSA) |
-| ☐ 2 | Revise 1 Core Subject topic | [02-Core-Subjects/](./02-Core-Subjects/) |
-| ☐ 3 | Commit code / update notes | This repo |
-| ☐ 4 | Update progress tracker | [PROGRESS-TRACKER.md](./01-Roadmap/PROGRESS-TRACKER.md) |
-| ☐ 5 | Check what's next | [CURRENT-FOCUS.md](./01-Roadmap/CURRENT-FOCUS.md) |
+1. Daily_DSA
+2. Core Subjects
+3. Projects
 
 ---
 
-## 🗂️ Command Center — 01-Roadmap
+## Repository Sections
 
-> All navigation and planning lives here.
+### [01-Core-Subjects](./01-Core-Subjects/)
+Notes on fundamental CS subjects.
 
-| File | Purpose | Open When... |
-|---|---|---|
-| [CURRENT-FOCUS.md](./01-Roadmap/CURRENT-FOCUS.md) | What to study RIGHT NOW | Every session |
-| [WEEKLY-PLAN.md](./01-Roadmap/WEEKLY-PLAN.md) | Daily dashboard + week template | Monday planning |
-| [PROGRESS-TRACKER.md](./01-Roadmap/PROGRESS-TRACKER.md) | Checklists + progress bars | Sunday review |
-| [MASTER-ROADMAP.md](./01-Roadmap/MASTER-ROADMAP.md) | Full journey flowchart | When lost or unfocused |
-| [REPOSITORY-MAP.md](./01-Roadmap/REPOSITORY-MAP.md) | Find any file fast | When navigating |
-
----
-
-## 🗂️ Repository Architecture
-
-This repository is your **Placement Preparation Hub** — covering everything except DSA, which lives in its own daily-practice repository.
-
-| # | Module | Contents | Priority |
-|---|---|---|---|
-| 📦 | [Daily_DSA ↗](https://github.com/Harshaghera111/Daily_DSA) | Striver A2Z · LeetCode · GFG | 🔥 Highest |
-| 01 | [🗺️ Roadmap](./01-Roadmap/) | Plans, focus, tracker, maps | 🔥 Always open |
-| 02 | [📚 Core Subjects](./02-Core-Subjects/) | DBMS · OOP · OS · CN | 🔥 High |
-| 03 | [🔧 Projects](./03-Projects/) | GarageSathi · GramSathi · TyreWebsite | ⚡ Medium |
-| 04 | [🤖 AI Engineering](./04-AI-Engineering/) | LLMs · RAG · Embeddings · Agents | 📚 Later |
-| 05 | [🎤 Interview Prep](./05-Interview-Prep/) | HR · Technical · Resume | 🎯 Phase 3 |
-| 06 | [🏗️ System Design](./06-System-Design/) | Concepts · Case Studies | 📚 Later |
-
-```
-Placement-Prep-2026/
-│
-├── 01-Roadmap/            ← 🗺️  Command Center (start here)
-├── 02-Core-Subjects/      ← 📚  DBMS, OOP, OS, CN
-├── 03-Projects/           ← 🔧  GarageSathi, GramSathi, TyreWebsite
-├── 04-AI-Engineering/     ← 🤖  LLMs, RAG, Embeddings, Agents
-├── 05-Interview-Prep/     ← 🎤  HR, Technical Q&A, Resume
-└── 06-System-Design/      ← 🏗️  Case studies & concepts
-
-📦 DSA → Daily_DSA (separate repository)
-```
+| File | Topic |
+|---|---|
+| [DBMS.md](./01-Core-Subjects/DBMS.md) | Database Management Systems |
+| [OS.md](./01-Core-Subjects/OS.md) | Operating Systems |
+| [CN.md](./01-Core-Subjects/CN.md) | Computer Networks |
+| [OOP.md](./01-Core-Subjects/OOP.md) | Object-Oriented Programming |
+| [SQL.md](./01-Core-Subjects/SQL.md) | SQL Queries & Concepts |
 
 ---
 
-## 📊 Current Progress Snapshot
+### [02-Projects](./02-Projects/)
+Documentation for projects built.
 
-> Full tracker: [PROGRESS-TRACKER.md](./01-Roadmap/PROGRESS-TRACKER.md)
-
-| Area | Progress | Status |
-|---|---|---|
-| 🔥 DSA | `[■□□□□□□□□□]` 0% | 🟡 In Progress — Daily_DSA |
-| 📚 Core Subjects | `[■□□□□□□□□□]` 5% | 🟡 OOP + DBMS active |
-| 🔧 Projects | `[■■□□□□□□□□]` 15% | 🟡 GarageSathi deep dive |
-| 🎤 Interview Readiness | `[■□□□□□□□□□]` 5% | 🔴 Phase 3 |
-
----
-
-## 🏷️ Current Priority
-
-| Label | Area | Action |
-|---|---|---|
-| 🔥 **Priority 1** | DSA | Daily_DSA repo — 2 problems/day minimum |
-| 🔥 **Priority 2** | Core Subjects | DBMS → OS → CN → OOP |
-| ⚡ **Priority 3** | Projects | Document + prepare walkthrough answers |
-| 📚 **Later** | AI Engineering + System Design | Phase 2–3 |
+| File | Project |
+|---|---|
+| [GarageSathi.md](./02-Projects/GarageSathi.md) | GarageSathi |
+| [GramSathi.md](./02-Projects/GramSathi.md) | GramSathi |
+| [TyreWebsite.md](./02-Projects/TyreWebsite.md) | Tyre Website |
+| [FutureProjects.md](./02-Projects/FutureProjects.md) | Ideas & future builds |
 
 ---
 
-## ⏳ Phase Timeline
+### [03-AI-Engineering](./03-AI-Engineering/)
+Notes on AI, LLMs, and modern AI engineering.
 
-| Phase | Period | Focus |
-|---|---|---|
-| 🟥 **Phase 1** ← *You are here* | Jun – Aug 2026 | DSA Foundations + Core CS |
-| 🟦 Phase 2 | Sep – Nov 2026 | Advanced DSA + Projects + AI |
-| 🟪 Phase 3 | Dec 2026 – Feb 2027 | DP + System Design + Mock Interviews |
-| 🟩 Phase 4 | Mar – May 2027 | Applications + Offers |
-
----
-
-## 💡 Philosophy
-
-> **Understand first. Memorise later. Build on top.**
-
-- Notes go in *as I learn*, not after
-- Every file is a living document — revisit and update constantly
-- Quality over quantity — understand 10 problems deeply over skimming 100
-- Placement prep is a marathon. This repo grows with me.
+| File | Topic |
+|---|---|
+| [AI-Concepts.md](./03-AI-Engineering/AI-Concepts.md) | AI Basics & Fundamentals |
+| [LLMs.md](./03-AI-Engineering/LLMs.md) | Large Language Models |
+| [RAG.md](./03-AI-Engineering/RAG.md) | Retrieval-Augmented Generation |
+| [Embeddings.md](./03-AI-Engineering/Embeddings.md) | Embeddings |
+| [Vector-Databases.md](./03-AI-Engineering/Vector-Databases.md) | Vector Databases |
+| [NLP.md](./03-AI-Engineering/NLP.md) | NLP Concepts |
+| [AI-Agents.md](./03-AI-Engineering/AI-Agents.md) | AI Agents |
 
 ---
 
-<p align="center">
-  <em>Started June 2026 · Updated continuously · Built in public</em>
-</p>
+### [04-Interview-Prep](./04-Interview-Prep/)
+Questions, answers, and preparation material for interviews.
+
+| File | Content |
+|---|---|
+| [HR-Questions.md](./04-Interview-Prep/HR-Questions.md) | HR & behavioural questions |
+| [Technical-Questions.md](./04-Interview-Prep/Technical-Questions.md) | Technical interview questions |
+| [Resume.md](./04-Interview-Prep/Resume.md) | Resume notes & talking points |
+| [Company-Experiences.md](./04-Interview-Prep/Company-Experiences.md) | Interview experiences & learnings |
+
+---
+
+### [05-System-Design](./05-System-Design/)
+System design concepts and case studies.
+
+| File | Topic |
+|---|---|
+| [Basics.md](./05-System-Design/Basics.md) | System Design Fundamentals |
+| [URL_Shortener.md](./05-System-Design/URL_Shortener.md) | URL Shortener Design |
+| [Rate_Limiter.md](./05-System-Design/Rate_Limiter.md) | Rate Limiter Design |
+| [Notification_System.md](./05-System-Design/Notification_System.md) | Notification System Design |
+
+---
+
+## Goal
+
+**Internship → Placement → Software Engineer**
+
+---
+
+*Add notes when you learn. Document projects when you build. Store questions when you prepare.*
