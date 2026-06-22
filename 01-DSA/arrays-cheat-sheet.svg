@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1800">
+  <style>
+    .bg { fill: #f9f9fb; }
+    .title { font: bold 60px Arial, sans-serif; fill: #183152; }
+    .subtitle { font: bold 30px Arial, sans-serif; fill: #183152; }
+    .section-title { font: bold 26px Arial, sans-serif; fill: #2f4a74; }
+    .text { font: 22px Arial, sans-serif; fill: #313131; }
+    .code { font: 20px Consolas, Monaco, monospace; fill: #1f3b70; }
+    .label { font: bold 20px Arial, sans-serif; fill: #ffffff; }
+    .block { fill: #ffffff; stroke: #d2d7e3; stroke-width: 2; }
+    .block-accent { fill: #f3f7ff; stroke: #bbc7e4; stroke-width: 2; }
+  </style>
+  <rect class="bg" width="1200" height="1800" rx="30"/>
+  <text x="80" y="90" class="title">ARRAYS</text>
+  <text x="80" y="140" class="text">Quick reference cheat sheet for array concepts and patterns.</text>
+
+  <rect class="block" x="70" y="180" width="520" height="330" rx="24"/>
+  <text x="100" y="230" class="section-title">1. What is an Array?</text>
+  <text x="100" y="270" class="text">- Collection of same-type elements in contiguous memory.</text>
+  <text x="100" y="300" class="text">- Fixed size, 0-based indexing, random access by index.</text>
+  <text x="100" y="330" class="text">- Fast access O(1), insertion/deletion in middle O(n).</text>
+
+  <rect class="block" x="70" y="530" width="520" height="340" rx="24"/>
+  <text x="100" y="580" class="section-title">2. Declaration & Initialization (Java)</text>
+  <text x="100" y="620" class="code">int[] arr;</text>
+  <text x="100" y="655" class="text">arr = new int[5];  // size = 5</text>
+  <text x="100" y="685" class="code">int[] arr = new int[5];</text>
+  <text x="100" y="720" class="code">int[] arr = {1, 2, 3, 4, 5};</text>
+  <text x="100" y="760" class="text">Other types: double[], char[], String[]</text>
+
+  <rect class="block" x="620" y="180" width="520" height="340" rx="24"/>
+  <text x="650" y="230" class="section-title">3. Memory Representation</text>
+  <text x="650" y="270" class="text">Example:</text>
+  <text x="650" y="300" class="code">int[] arr = {10, 20, 30, 40, 50};</text>
+  <text x="650" y="340" class="text">Index: 0 1 2 3 4</text>
+  <text x="650" y="370" class="text">Value: 10 20 30 40 50</text>
+  <text x="650" y="410" class="text">Contiguous addresses in memory, fixed length.</text>
+  <text x="650" y="450" class="text">Each element occupies 4 bytes in Java int array.</text>
+
+  <rect class="block" x="70" y="900" width="520" height="340" rx="24"/>
+  <text x="100" y="950" class="section-title">4. Basic Operations</text>
+  <text x="100" y="990" class="text">Access: arr[2]</text>
+  <text x="100" y="1020" class="text">Update: arr[2] = 35;</text>
+  <text x="100" y="1050" class="text">Traversal: for (int i=0; i<n; i++) System.out.print(arr[i]);</text>
+  <text x="100" y="1080" class="text">Length: arr.length</text>
+
+  <rect class="block" x="620" y="900" width="520" height="340" rx="24"/>
+  <text x="650" y="950" class="section-title">5. Common Traversal Patterns</text>
+  <text x="650" y="990" class="text">Forward:</text>
+  <text x="650" y="1025" class="code">for (int i=0; i<n; i++) { ... }</text>
+  <text x="650" y="1060" class="text">Reverse:</text>
+  <text x="650" y="1095" class="code">for (int i=n-1; i>=0; i--) { ... }</text>
+
+  <rect class="block" x="70" y="1280" width="520" height="420" rx="24"/>
+  <text x="100" y="1330" class="section-title">6. Types of Arrays</text>
+  <text x="100" y="1370" class="text">1D array: int[] arr = {1,2,3,4,5};</text>
+  <text x="100" y="1400" class="text">2D array:</text>
+  <text x="100" y="1430" class="code">int[][] mat = {{1,2,3}, {4,5,6}};</text>
+  <text x="100" y="1470" class="text">Jagged array:</text>
+  <text x="100" y="1500" class="code">int[][] jagged = new int[3][];</text>
+  <text x="100" y="1530" class="code">jagged[0] = new int[]{1,2};</text>
+  <text x="100" y="1560" class="code">jagged[1] = new int[]{3,4,5,6};</text>
+
+  <rect class="block-accent" x="620" y="1280" width="520" height="420" rx="24"/>
+  <text x="650" y="1330" class="section-title">7. Common Problems</text>
+  <text x="650" y="1370" class="text">1. Largest element</text>
+  <text x="650" y="1398" class="text">2. Smallest element</text>
+  <text x="650" y="1426" class="text">3. Sum of elements</text>
+  <text x="650" y="1454" class="text">4. Average</text>
+  <text x="650" y="1482" class="text">5. Count evens/odds</text>
+  <text x="650" y="1510" class="text">6. Check sorted</text>
+  <text x="650" y="1538" class="text">7. Reverse</text>
+  <text x="650" y="1566" class="text">8. Linear search</text>
+  <text x="650" y="1594" class="text">9. Max frequency</text>
+  <text x="650" y="1622" class="text">10. Move zeros to end</text>
+</svg>

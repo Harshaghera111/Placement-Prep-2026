@@ -2,6 +2,8 @@
 
 > Concepts, patterns, and revision notes — not code.
 
+![Arrays Cheat Sheet](./arrays-cheat-sheet.svg)
+
 ---
 
 ## Core Concepts
