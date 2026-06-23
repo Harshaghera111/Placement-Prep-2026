@@ -21,7 +21,7 @@
   <text x="100" y="330" class="text">- Fast access O(1), insertion/deletion in middle O(n).</text>
 
   <rect class="block" x="70" y="530" width="520" height="340" rx="24"/>
-  <text x="100" y="580" class="section-title">2. Declaration & Initialization (Java)</text>
+  <text x="100" y="580" class="section-title">2. Declaration &amp; Initialization (Java)</text>
   <text x="100" y="620" class="code">int[] arr;</text>
   <text x="100" y="655" class="text">arr = new int[5];  // size = 5</text>
   <text x="100" y="685" class="code">int[] arr = new int[5];</text>
@@ -41,15 +41,15 @@
   <text x="100" y="950" class="section-title">4. Basic Operations</text>
   <text x="100" y="990" class="text">Access: arr[2]</text>
   <text x="100" y="1020" class="text">Update: arr[2] = 35;</text>
-  <text x="100" y="1050" class="text">Traversal: for (int i=0; i<n; i++) System.out.print(arr[i]);</text>
+  <text x="100" y="1050" class="text">Traversal: for (int i=0; i&lt; n; i++) System.out.print(arr[i]);</text>
   <text x="100" y="1080" class="text">Length: arr.length</text>
 
   <rect class="block" x="620" y="900" width="520" height="340" rx="24"/>
   <text x="650" y="950" class="section-title">5. Common Traversal Patterns</text>
   <text x="650" y="990" class="text">Forward:</text>
-  <text x="650" y="1025" class="code">for (int i=0; i<n; i++) { ... }</text>
+  <text x="650" y="1025" class="code">for (int i=0; i&lt; n; i++) { ... }</text>
   <text x="650" y="1060" class="text">Reverse:</text>
-  <text x="650" y="1095" class="code">for (int i=n-1; i>=0; i--) { ... }</text>
+  <text x="650" y="1095" class="code">for (int i=n-1; i&gt;=0; i--) { ... }</text>
 
   <rect class="block" x="70" y="1280" width="520" height="420" rx="24"/>
   <text x="100" y="1330" class="section-title">6. Types of Arrays</text>
