@@ -1028,4 +1028,4 @@ Time: O(n²) | Space: O(1)
 4. Once these 22 feel automatic, move to **Pascal's Triangle, Spiral Matrix, and Floyd's Triangle variations** — natural next step after this sheet.
 
 ---
-*Notes prepared for personal placement prep — Harsh Ghera, Placement-Prep-2026 repo.*
+*Notes prepared for personal placement prep — Harsh Aghera, Placement-Prep-2026 repo.*
