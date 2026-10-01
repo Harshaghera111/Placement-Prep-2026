@@ -254,25 +254,345 @@ Nested loop on array → ask "can I trade space for time with a HashMap instead?
 
 ---
 
-## Problems Solved — Worked Through Properly
+## 9. Striver A2Z — Array Problems
 
-### ✅ Find Maximum/Minimum in Array
-**Pattern used:** single-pass traversal
-**Key learnings:**
-- Initialize `max` with `arr[0]`, **not** `0` or `Integer.MIN_VALUE` arbitrarily without reason — if all elements are negative, initializing with `0` silently gives a wrong answer.
-- **Edge case interviewers always probe:** empty array or single-element array — does your code crash or silently return wrong output?
+This section serves as the dedicated revision and progress tracker for the **Arrays** module of **Striver's A2Z DSA Sheet** ([takeuforward reference](https://takeuforward.org/prep-hub/strivers-a2z-dsa-sheet)). Problems are strictly categorized by Striver's official progression: **Easy (14)**, **Medium (14)**, and **Hard (12)**.
 
-### ✅ Reverse an Array In-Place
-**Pattern used:** two-pointer
-**Key learnings:**
-- Swap `arr[left]` and `arr[right]`, then `left++`, `right--`, until `left >= right`.
-- **Edge case interviewers always probe:** odd-length array — the middle element shouldn't be touched; your loop condition (`left < right`, not `left <= right`) should naturally handle this. If you use `<=`, trace through it once to convince yourself it still works (it does, since swapping an element with itself is harmless) — but knowing *why* matters more than getting lucky.
+---
 
-### ✅ Find the "Missing Number" in 1 to N
-**Pattern used:** sum formula / XOR trick
-**Key learnings:**
-- Expected sum = `n*(n+1)/2`, actual sum = sum of given array, missing = difference.
-- **Interview trap:** for large `n`, `n*(n+1)` can overflow `int` — cast to `long` before multiplying, same overflow discipline from Basic Programming applies here directly.
+### Easy (14 Problems)
+
+| # | Problem | Pattern / Main Idea | Status |
+|---|---|---|---|
+| 1 | [Largest Element in an Array](#1-largest-element-in-an-array) | Traversal / Track maximum initialized to `arr[0]` | ✅ Solved |
+| 2 | [Second Largest Element in an Array without sorting](#2-second-largest-element-in-an-array-without-sorting) | Single Pass / Maintain `largest` and `secondLargest` | ⬜ Not Yet Solved |
+| 3 | [Check if Array is Sorted](#3-check-if-array-is-sorted) | Traversal / Check if `arr[i] >= arr[i - 1]` for all indices | ⬜ Not Yet Solved |
+| 4 | [Remove Duplicates from Sorted Array](#4-remove-duplicates-from-sorted-array) | Two Pointer / In-place slow pointer tracks unique elements | ⬜ Not Yet Solved |
+| 5 | [Left Rotate an Array by One Place](#5-left-rotate-an-array-by-one-place) | In-Place Shifting / Save first element, shift rest left, place at end | ⬜ Not Yet Solved |
+| 6 | [Left Rotate an Array by D Places](#6-left-rotate-an-array-by-d-places) | Reversal Algorithm / Reverse `0..d-1`, reverse `d..n-1`, reverse whole | ⬜ Not Yet Solved |
+| 7 | [Move Zeroes to End](#7-move-zeroes-to-end) | Two Pointer / In-place maintain pointer for next non-zero position | ⬜ Not Yet Solved |
+| 8 | [Linear Search](#8-linear-search) | Traversal / Scan sequentially until match found | ✅ Solved |
+| 9 | [Find Union and Intersection of Two Sorted Arrays](#9-find-union-and-intersection-of-two-sorted-arrays) | Two Pointer / Coordinated traversal of two sorted arrays | ⬜ Not Yet Solved |
+| 10 | [Find Missing Number in an Array](#10-find-missing-number-in-an-array) | Math / Sum Formula (`n*(n+1)/2 - sum`) or XOR | ✅ Solved |
+| 11 | [Maximum Consecutive Ones](#11-maximum-consecutive-ones) | Traversal / Running streak counter, reset on 0 | ⬜ Not Yet Solved |
+| 12 | [Single Number (Appears Once, Others Twice)](#12-single-number-appears-once-others-twice) | Bit Manipulation / XOR cancellation (`a ^ a = 0`) | ⬜ Not Yet Solved |
+| 13 | [Longest Subarray with Given Sum K (Positives)](#13-longest-subarray-with-given-sum-k-positives) | Two Pointer / Sliding Window expanding right, shrinking left | ⬜ Not Yet Solved |
+| 14 | [Longest Subarray with Sum K (Positives + Negatives)](#14-longest-subarray-with-sum-k-positives--negatives) | Prefix Sum + HashMap / Store earliest index of each prefix sum | ⬜ Not Yet Solved |
+
+---
+
+### Medium (14 Problems)
+
+| # | Problem | Pattern / Main Idea | Status |
+|---|---|---|---|
+| 1 | [2Sum Problem](#1-2sum-problem) | Hashing / Target complement lookup in HashMap | ⬜ Not Yet Solved |
+| 2 | [Sort an Array of 0s, 1s, and 2s](#2-sort-an-array-of-0s-1s-and-2s) | Dutch National Flag / 3 pointers (`low`, `mid`, `high`) partitioning | ⬜ Not Yet Solved |
+| 3 | [Majority Element (> n/2 times)](#3-majority-element--n2-times) | Boyer-Moore Voting / Candidate tracking with balance count | ⬜ Not Yet Solved |
+| 4 | [Maximum Subarray Sum (Kadane's Algorithm)](#4-maximum-subarray-sum-kadanes-algorithm) | Kadane's / Extend current subarray or restart fresh at each index | ⬜ Not Yet Solved |
+| 5 | [Print Subarray with Maximum Subarray Sum](#5-print-subarray-with-maximum-subarray-sum) | Kadane's with Index Tracking / Track `start`, `ansStart`, `ansEnd` | ⬜ Not Yet Solved |
+| 6 | [Stock Buy and Sell](#6-stock-buy-and-sell) | Single Pass Greedy / Track lowest buying price seen so far | ⬜ Not Yet Solved |
+| 7 | [Rearrange Array Elements by Sign](#7-rearrange-array-elements-by-sign) | Two Pointer / Place positives at even indices, negatives at odd | ⬜ Not Yet Solved |
+| 8 | [Next Permutation](#8-next-permutation) | Lexicographical Scan / Find pivot from right, swap with next greater, reverse | ⬜ Not Yet Solved |
+| 9 | [Leaders in an Array](#9-leaders-in-an-array) | Reverse Traversal / Scan right-to-left tracking running maximum | ⬜ Not Yet Solved |
+| 10 | [Longest Consecutive Sequence](#10-longest-consecutive-sequence) | HashSet Lookup / Start counting streak only if `(num - 1)` not in set | ⬜ Not Yet Solved |
+| 11 | [Set Matrix Zeroes](#11-set-matrix-zeroes) | In-Place Markers / Use 1st row & 1st col as markers, plus 2 flag variables | ⬜ Not Yet Solved |
+| 12 | [Rotate Image by 90 Degrees](#12-rotate-image-by-90-degrees) | Transpose + Row Reversal / In-place matrix rotation | ⬜ Not Yet Solved |
+| 13 | [Spiral Matrix](#13-spiral-matrix) | Simulation / 4 boundary pointers (`top`, `bottom`, `left`, `right`) | ⬜ Not Yet Solved |
+| 14 | [Count Subarray Sum Equals K](#14-count-subarray-sum-equals-k) | Prefix Sum + HashMap / Accumulate frequencies of `(prefix - k)` | ⬜ Not Yet Solved |
+
+---
+
+### Hard (12 Problems)
+
+| # | Problem | Pattern / Main Idea | Status |
+|---|---|---|---|
+| 1 | [Pascal's Triangle](#1-pascals-triangle) | Combinatorics / Compute row values via `prev * (row - col) / col` | ⬜ Not Yet Solved |
+| 2 | [Majority Element (n/3 times)](#2-majority-element-n3-times) | Extended Boyer-Moore / Track up to 2 candidates and 2 counters | ⬜ Not Yet Solved |
+| 3 | [3-Sum Problem](#3-3-sum-problem) | Sorting + Two Pointer / Fix element `i`, two pointers on remainder, skip duplicates | ⬜ Not Yet Solved |
+| 4 | [4-Sum Problem](#4-4-sum-problem) | Sorting + Two Pointer / Fix `i` & `j`, two pointers on remainder, cast to `long` | ⬜ Not Yet Solved |
+| 5 | [Largest Subarray with 0 Sum](#5-largest-subarray-with-0-sum) | Prefix Sum + HashMap / Maximum span between identical prefix sums | ⬜ Not Yet Solved |
+| 6 | [Count Subarrays with Given XOR K](#6-count-subarrays-with-given-xor-k) | Prefix XOR + HashMap / Count frequency of `(prefixXOR ^ K)` | ⬜ Not Yet Solved |
+| 7 | [Merge Overlapping Subintervals](#7-merge-overlapping-subintervals) | Sorting + Linear Scan / Sort by start time; extend boundary if overlapping | ⬜ Not Yet Solved |
+| 8 | [Merge Two Sorted Arrays Without Extra Space](#8-merge-two-sorted-arrays-without-extra-space) | Gap Method (Shell Sort) / Compare & swap at decreasing `gap = ceil(len/2)` | ⬜ Not Yet Solved |
+| 9 | [Find the Repeating and Missing Number](#9-find-the-repeating-and-missing-number) | Math (Sum Equations) or XOR / Solve `X - Y` and `X² - Y²` | ⬜ Not Yet Solved |
+| 10 | [Count Inversions in an Array](#10-count-inversions-in-an-array) | Divide and Conquer / Count inversions during Merge Sort merge step | ⬜ Not Yet Solved |
+| 11 | [Reverse Pairs](#11-reverse-pairs) | Divide and Conquer / Count pairs with `nums[i] > 2 * nums[j]` in Merge Sort | ⬜ Not Yet Solved |
+| 12 | [Maximum Product Subarray](#12-maximum-product-subarray) | Modified Kadane's / Track running min and max products (handles negative signs) | ⬜ Not Yet Solved |
+
+---
+
+### Problem Revision Notes — Easy
+
+#### 1. Largest Element in an Array
+- **Pattern:** Traversal / Single Pass
+- **Core idea:** Maintain running `max` initialized to `arr[0]`. Traverse from index `1` to `n - 1`, updating `max = arr[i]` whenever a larger value is encountered.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ✅ Solved
+- **Key Learnings & Traps:**
+  - Initialize `max` with `arr[0]`, **not** `0` or `Integer.MIN_VALUE` arbitrarily without reason — if all elements are negative, initializing with `0` silently gives a wrong answer.
+  - Edge case: empty array or single-element array — ensure code doesn't crash on index out of bounds.
+
+*(Foundation Bonus Note)*: **Reverse an Array In-Place** (Two Pointer, O(n) time, O(1) space) — Swap `arr[left]` and `arr[right]`, then `left++`, `right--`, until `left >= right`. Loop condition `left < right` leaves the center element untouched for odd lengths. Status: ✅ Solved.
+
+#### 2. Second Largest Element in an Array without sorting
+- **Pattern:** Single Pass / Two Variable Tracking
+- **Core idea:** Maintain `largest = arr[0]` and `secondLargest = -1` (or `Integer.MIN_VALUE`). For each element: if `num > largest`, `secondLargest = largest` and `largest = num`. Else if `num < largest && num > secondLargest`, `secondLargest = num`.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 3. Check if Array is Sorted
+- **Pattern:** Traversal
+- **Core idea:** Scan from index `1` to `n - 1`. If `arr[i] < arr[i - 1]` at any point, the array is not sorted; return `false`. For rotated sorted check (LeetCode 1752), allow at most one count where `arr[i] > arr[(i + 1) % n]`.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 4. Remove Duplicates from Sorted Array
+- **Pattern:** Two Pointer / In-Place
+- **Core idea:** Pointer `i = 0` marks the boundary of unique elements. Pointer `j` iterates from `1` to `n - 1`. Whenever `arr[j] != arr[i]`, increment `i` and set `arr[i] = arr[j]`. Return `i + 1`.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 5. Left Rotate an Array by One Place
+- **Pattern:** In-Place Shifting
+- **Core idea:** Store `arr[0]` in a temporary variable `temp`. Shift all elements one step left (`arr[i - 1] = arr[i]` for `i` from `1` to `n - 1`). Assign `arr[n - 1] = temp`.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 6. Left Rotate an Array by D Places
+- **Pattern:** Reversal Algorithm
+- **Core idea:** First normalize `d = d % n`. Reverse first `d` elements `arr[0..d-1]`, reverse remaining `n - d` elements `arr[d..n-1]`, then reverse the entire array `arr[0..n-1]`.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 7. Move Zeroes to End
+- **Pattern:** Two Pointer / In-Place
+- **Core idea:** Find the first zero index `j`. Then iterate pointer `i` from `j + 1` to `n - 1`. Whenever `arr[i] != 0`, swap `arr[i]` with `arr[j]` and increment `j`.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 8. Linear Search
+- **Pattern:** Traversal
+- **Core idea:** Sequentially compare every element `arr[i]` with the target value. Return the index on match; return `-1` if the end is reached without a match.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ✅ Solved
+- **Code Reference:** Preserved in [Section 5: Searching](#5-searching)
+
+#### 9. Find Union and Intersection of Two Sorted Arrays
+- **Pattern:** Two Pointer
+- **Core idea:** For union: maintain pointers `i` and `j`; append the smaller element while skipping adjacent duplicates, then flush leftovers. For intersection: advance smaller pointer; if equal, add to result and advance both.
+- **Complexity:** O(n + m) time, O(n + m) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 10. Find Missing Number in an Array
+- **Pattern:** Math (Sum Formula) / Bitwise XOR
+- **Core idea:** Expected sum of numbers from `0` to `n` is `n * (n + 1) / 2`. Missing number is `expectedSum - actualSum`. Alternatively, XOR all array values with numbers `0..n`; duplicate values cancel out (`x ^ x = 0`), leaving the missing number.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ✅ Solved
+- **Key Learnings & Traps:**
+  - For large `n`, `n * (n + 1)` can overflow 32-bit `int` — cast to `long` before multiplication, or use XOR to remain strictly overflow-immune.
+
+#### 11. Maximum Consecutive Ones
+- **Pattern:** Traversal / Counter
+- **Core idea:** Maintain `count` and `maxCount`. Iterate through the array: if `arr[i] == 1`, increment `count` and update `maxCount = max(maxCount, count)`. If `arr[i] == 0`, reset `count = 0`.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 12. Single Number (Appears Once, Others Twice)
+- **Pattern:** Bit Manipulation / XOR
+- **Core idea:** XOR all numbers together. Since `x ^ x = 0` and `x ^ 0 = x`, all numbers appearing twice cancel each other out, leaving only the single unique number.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 13. Longest Subarray with Given Sum K (Positives)
+- **Pattern:** Two Pointer / Sliding Window
+- **Core idea:** Maintain `left` and `right` pointers with running `sum`. Expand `right` to increase `sum`. While `sum > K` and `left <= right`, shrink by subtracting `arr[left++]`. When `sum == K`, update `maxLen = max(maxLen, right - left + 1)`.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 14. Longest Subarray with Sum K (Positives + Negatives)
+- **Pattern:** Prefix Sum + HashMap
+- **Core idea:** Running prefix sum `currSum`. If `currSum == K`, `maxLen = i + 1`. If `(currSum - K)` exists in the map, a subarray sums to `K` with length `i - map.get(currSum - K)`. Only store `currSum` in map if not already present (to maximize subarray length).
+- **Complexity:** O(n) time, O(n) space
+- **Status:** ⬜ Not Yet Solved
+
+---
+
+### Problem Revision Notes — Medium
+
+#### 1. 2Sum Problem
+- **Pattern:** Hashing / Two Pointer
+- **Core idea:** For each element, look up `target - arr[i]` in a HashMap. If present, return indices. If only returning boolean existence, sorting plus two pointers achieves O(n log n) time and O(1) space.
+- **Complexity:** O(n) time, O(n) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 2. Sort an Array of 0s, 1s, and 2s
+- **Pattern:** Dutch National Flag Algorithm / Three Pointer
+- **Core idea:** Maintain 3 pointers: `low = 0`, `mid = 0`, `high = n - 1`. If `arr[mid] == 0`, swap with `arr[low]` and increment `low`, `mid`. If `arr[mid] == 1`, increment `mid`. If `arr[mid] == 2`, swap with `arr[high]` and decrement `high`.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 3. Majority Element (> n/2 times)
+- **Pattern:** Boyer-Moore Voting Algorithm
+- **Core idea:** Maintain `candidate` and `count = 0`. Iterate through array: if `count == 0`, set `candidate = arr[i]`. If `arr[i] == candidate`, increment `count`, else decrement `count`.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 4. Maximum Subarray Sum (Kadane's Algorithm)
+- **Pattern:** Kadane's Algorithm
+- **Core idea:** At each element, decide whether to add it to the running sum or start fresh: `currSum = max(arr[i], currSum + arr[i])`. Track `maxSum = max(maxSum, currSum)`. If `currSum < 0`, reset `currSum = 0`.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 5. Print Subarray with Maximum Subarray Sum
+- **Pattern:** Kadane's Algorithm with Index Tracking
+- **Core idea:** Track starting index `s` whenever `sum` resets to 0. When updating `maxSum`, record `ansStart = s` and `ansEnd = i`. The subarray is `arr[ansStart..ansEnd]`.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 6. Stock Buy and Sell
+- **Pattern:** Single Pass Greedy
+- **Core idea:** Maintain `minPrice` initialized to `prices[0]` and `maxProfit = 0`. At each day, update `minPrice = min(minPrice, prices[i])` and `maxProfit = max(maxProfit, prices[i] - minPrice)`.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 7. Rearrange Array Elements by Sign
+- **Pattern:** Two Pointer / Extra Array
+- **Core idea:** Allocate result array of size `n`. Place positive numbers at even indices `posIndex = 0, 2, 4...` and negative numbers at odd indices `negIndex = 1, 3, 5...`.
+- **Complexity:** O(n) time, O(n) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 8. Next Permutation
+- **Pattern:** Lexicographical Scan & Swap
+- **Core idea:** 1) Find largest index `i` from right where `arr[i] < arr[i + 1]`. 2) If no such `i`, reverse whole array. 3) Otherwise, find smallest element in right suffix greater than `arr[i]`, swap them, and reverse suffix from `i + 1` to end.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 9. Leaders in an Array
+- **Pattern:** Reverse Traversal
+- **Core idea:** Scan from right to left maintaining `maxFromRight`. An element is a leader if `arr[i] >= maxFromRight`. Update `maxFromRight` whenever a new leader is found. Reverse result at end to restore original order.
+- **Complexity:** O(n) time, O(1) auxiliary space
+- **Status:** ⬜ Not Yet Solved
+
+#### 10. Longest Consecutive Sequence
+- **Pattern:** HashSet Lookup
+- **Core idea:** Insert all numbers into a `HashSet`. Iterate through set: only attempt to build a sequence if `num - 1` is NOT in the set (ensures we only start at streak beginnings). While `set.contains(current + 1)`, increment streak.
+- **Complexity:** O(n) time, O(n) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 11. Set Matrix Zeroes
+- **Pattern:** In-Place Markers
+- **Core idea:** Use the first row and first column of the matrix as tracking flags. Use two separate booleans `firstRowZero` and `firstColZero` to mark whether the first row/col themselves originally had zeroes.
+- **Complexity:** O(m × n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 12. Rotate Image by 90 Degrees
+- **Pattern:** Transpose & Reverse
+- **Core idea:** Clockwise 90-degree rotation equals: 1) Transpose matrix along main diagonal (`swap(matrix[i][j], matrix[j][i])` for `j > i`). 2) Reverse every row horizontally.
+- **Complexity:** O(n²) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 13. Spiral Matrix
+- **Pattern:** Simulation / 4 Boundary Pointers
+- **Core idea:** Maintain `top = 0`, `bottom = m - 1`, `left = 0`, `right = n - 1`. Traverse left→right along `top`, top→bottom along `right`, right→left along `bottom`, bottom→top along `left`. Shrink boundaries inward after each side until pointers cross.
+- **Complexity:** O(m × n) time, O(1) auxiliary space
+- **Status:** ⬜ Not Yet Solved
+
+#### 14. Count Subarray Sum Equals K
+- **Pattern:** Prefix Sum + HashMap
+- **Core idea:** Maintain running prefix sum. Check if `(prefixSum - k)` has been seen before in our HashMap; if yes, add its frequency to `count`. Initialize map with `map.put(0, 1)` to capture subarrays starting at index 0.
+- **Complexity:** O(n) time, O(n) space
+- **Status:** ⬜ Not Yet Solved
+
+---
+
+### Problem Revision Notes — Hard
+
+#### 1. Pascal's Triangle
+- **Pattern:** Combinatorics / Row Generation
+- **Core idea:** Any element at row `r` and col `c` is given by formula `nCr(r - 1, c - 1)`. To generate a full row in O(row), multiply previous element by `(row - col) / col`.
+- **Complexity:** O(n²) time, O(1) auxiliary space
+- **Status:** ⬜ Not Yet Solved
+
+#### 2. Majority Element (n/3 times)
+- **Pattern:** Extended Boyer-Moore Voting
+- **Core idea:** At most 2 elements can appear strictly more than `⌊n / 3⌋` times. Maintain 2 candidate variables and 2 counters. After one pass, run a verification pass to count exact occurrences of candidates.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 3. 3-Sum Problem
+- **Pattern:** Sorting + Two Pointer
+- **Core idea:** Sort array. Outer loop fixes `arr[i]`. Use two pointers `left = i + 1`, `right = n - 1` to find pairs summing to `-arr[i]`. Skip duplicate values for `i`, `left`, and `right` to guarantee unique triplets.
+- **Complexity:** O(n²) time, O(1) auxiliary space
+- **Status:** ⬜ Not Yet Solved
+
+#### 4. 4-Sum Problem
+- **Pattern:** Sorting + Two Pointer
+- **Core idea:** Sort array. Two outer loops fix `arr[i]` and `arr[j]`. Two pointers `left` and `right` find remaining pair summing to `target - arr[i] - arr[j]`. Cast sums to `long` to prevent 32-bit integer overflow.
+- **Complexity:** O(n³) time, O(1) auxiliary space
+- **Status:** ⬜ Not Yet Solved
+
+#### 5. Largest Subarray with 0 Sum
+- **Pattern:** Prefix Sum + HashMap
+- **Core idea:** Store first index of each prefix sum in a HashMap. If a prefix sum repeats at index `i`, the subarray between the previous index and `i` sums to zero. Maximize `i - map.get(prefixSum)`.
+- **Complexity:** O(n) time, O(n) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 6. Count Subarrays with Given XOR K
+- **Pattern:** Prefix XOR + HashMap
+- **Core idea:** Let current prefix XOR be `XR`. If there is an earlier prefix with XOR `Y` such that `Y ^ K = XR`, then the subarray between them has XOR `K`. Since `Y = XR ^ K`, lookup `map.get(XR ^ K)`.
+- **Complexity:** O(n) time, O(n) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 7. Merge Overlapping Subintervals
+- **Pattern:** Sorting + Interval Merge
+- **Core idea:** Sort intervals by start time. Iterate through intervals: if current interval overlaps with the previous (`start <= prevEnd`), merge by updating `prevEnd = max(prevEnd, end)`. Otherwise, push as a new distinct interval.
+- **Complexity:** O(n log n) time, O(1) auxiliary space
+- **Status:** ⬜ Not Yet Solved
+
+#### 8. Merge Two Sorted Arrays Without Extra Space
+- **Pattern:** Gap Method (Shell Sort intuition)
+- **Core idea:** Initialize `gap = ceil((n + m) / 2)`. Compare and swap elements at distance `gap` across the virtual combined array. Continue halving `gap` until `gap == 0`.
+- **Complexity:** O((n + m) log(n + m)) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 9. Find the Repeating and Missing Number
+- **Pattern:** Math Equations / Bitwise XOR
+- **Core idea:** Let `X` be repeating and `Y` be missing. 1) `S - Sn = X - Y`. 2) `S2 - S2n = X² - Y² = (X - Y)(X + Y)`. Dividing (2) by (1) gives `X + Y`. Solve both linear equations to find `X` and `Y` in O(1) space without modifying array.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 10. Count Inversions in an Array
+- **Pattern:** Divide and Conquer / Merge Sort
+- **Core idea:** An inversion is `i < j` with `arr[i] > arr[j]`. Modify Merge Sort: during the merge step, if `leftArr[i] > rightArr[j]`, all remaining elements from `i` to `mid` also form inversions with `rightArr[j]`, contributing `(mid - i + 1)` inversions.
+- **Complexity:** O(n log n) time, O(n) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 11. Reverse Pairs
+- **Pattern:** Divide and Conquer / Merge Sort
+- **Core idea:** A reverse pair is `i < j` with `nums[i] > 2 * nums[j]`. In Merge Sort, count reverse pairs using a dedicated two-pointer pass before the actual merge step: for each element in left half, advance pointer in right half while condition holds.
+- **Complexity:** O(n log n) time, O(n) space
+- **Status:** ⬜ Not Yet Solved
+
+#### 12. Maximum Product Subarray
+- **Pattern:** Modified Kadane's / Prefix-Suffix Product
+- **Core idea:** Because negative numbers flip signs when multiplied, track both `maxProd` and `minProd` ending at each position. When encountering a negative number, swap `maxProd` and `minProd` before multiplying.
+- **Complexity:** O(n) time, O(1) space
+- **Status:** ⬜ Not Yet Solved
+
+---
+
+## 10. Important Array Lessons
+
+1. **Single Traversal Supremacy:** When a problem asks for running extremes or balance points, check if one pass with 1–2 state variables avoids nested loops (e.g., Min Price tracking in Stock Buy & Sell, running sums in Pivot balance).
+2. **Two Pointer Trigger:** Sorted arrays almost always yield to two pointers moving from extremes (3Sum, 4Sum, Union/Intersection) or in-place slow/fast pointers (Remove Duplicates, Move Zeroes).
+3. **Prefix Sum + Hashing Trigger:** Subarray sum or XOR problems (`sum == K`, `sum == 0`, `XOR == K`) transform from O(n²) to O(n) by storing historical prefix values in a HashMap.
+4. **In-Place Matrix Markers:** When 2D matrix problems restrict auxiliary space to O(1), use row 0 and col 0 as indicator flags (Set Matrix Zeroes).
+5. **Integer Overflow Discipline:** Always cast to `long` before calculating `n * (n + 1)` or summing 4 integers in 4Sum to prevent silent 32-bit signed overflow.
+6. **Edge Cases to Always Probe Out Loud:**
+   - Empty array (`n == 0`) or single element (`n == 1`).
+   - Array with all negative numbers (initializing maximum to 0 fails).
+   - Array with all duplicate elements.
+   - Elements where sum or product exceeds `Integer.MAX_VALUE`.
 
 ---
 
